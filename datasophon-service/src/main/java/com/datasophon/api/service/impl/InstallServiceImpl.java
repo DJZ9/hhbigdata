@@ -429,7 +429,7 @@ public class InstallServiceImpl implements InstallService {
             return Result.error(Status.SELECT_LEAST_ONE_HOST.getMsg());
         }
         ClusterHostService clusterHostService =
-            SpringUtil.getBean(ClusterHostService.class);
+                SpringUtil.getBean(ClusterHostService.class);
         String[] clusterHostIdArray = clusterHostIds.split(Constants.COMMA);
         List<String> clusterHostIdList = Arrays.asList(clusterHostIdArray);
         List<ClusterHostDO> clusterHostList = hostService.getHostListByIds(clusterHostIdList);

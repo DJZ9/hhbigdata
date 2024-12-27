@@ -26,7 +26,7 @@
 <template>
   <div class="footer">
     <div class="copyright">
-     © 2023 DataSophon
+     © 2024 恒辉大数据平台
     </div>
   </div>
 </template>
