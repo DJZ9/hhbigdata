@@ -58,58 +58,6 @@
                     </filesets>
                 </configuration>
             </plugin>
-
-<!--            <plugin>-->
-<!--                <groupId>com.github.eirslett</groupId>-->
-<!--                <artifactId>frontend-maven-plugin</artifactId>-->
-<!--                <version>1.10.3</version>-->
-<!--                <configuration>-->
-<!--                    <nodeVersion>${build.node.version}</nodeVersion>-->
-<!--                    <npmVersion>${build.npm.version}</npmVersion>-->
-
-<!--                    <nodeDownloadRoot>https://npmmirror.com/mirrors/node/</nodeDownloadRoot>-->
-<!--                    <npmDownloadRoot>https://registry.npmmirror.com/npm/-/</npmDownloadRoot>-->
-<!--                </configuration>-->
-<!--                <executions>-->
-<!--                    <execution>-->
-<!--                        <id>install node and npm</id>-->
-<!--                        <goals>-->
-<!--                            <goal>install-node-and-npm</goal>-->
-<!--                        </goals>-->
-<!--                        <phase>generate-resources</phase>-->
-<!--                    </execution>-->
-<!--                    <execution>-->
-<!--                        <id>npm install</id>-->
-<!--                        <goals>-->
-<!--                            <goal>npm</goal>-->
-<!--                        </goals>-->
-<!--                        <phase>generate-resources</phase>-->
-<!--                        <configuration>-->
-<!--                            <arguments>install &#45;&#45;registry=https://registry.npmmirror.com &#45;&#45;sass-binary-site=https://npmmirror.com/mirrors/node-sass</arguments>-->
-<!--                        </configuration>-->
-<!--                    </execution>-->
-<!--                    <execution>-->
-<!--                        <id>npm run build</id>-->
-<!--                        <goals>-->
-<!--                            <goal>npm</goal>-->
-<!--                        </goals>-->
-<!--                        <phase>package</phase>-->
-<!--                        <configuration>-->
-<!--                            <arguments>run build</arguments>-->
-<!--                        </configuration>-->
-<!--                    </execution>-->
-<!--                    <execution>-->
-<!--                        <id>npm run deploy</id>-->
-<!--                        <goals>-->
-<!--                            <goal>npm</goal>-->
-<!--                        </goals>-->
-<!--                        <phase>install</phase>-->
-<!--                        <configuration>-->
-<!--                            <arguments>run deploy</arguments>-->
-<!--                        </configuration>-->
-<!--                    </execution>-->
-<!--                </executions>-->
-<!--            </plugin>-->
         </plugins>
     </build>
     <profiles>
