@@ -74,7 +74,8 @@ export default {
         return {
             loading: false,
             spinning: false,
-            ddhParcelPath: "file:///opt/datasophon/DDP/packages",
+            // ddhParcelPath: "file:///opt/datasophon/DDP/packages",
+            ddhParcelPath: "file:///opt/hhbigdata/DDP/packages",
             formState: {
                 name: "XXXXXX"
             },
