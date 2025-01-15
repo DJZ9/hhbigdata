@@ -24,7 +24,7 @@
         <version>${revision}</version>
     </parent>
 
-    <artifactId>datasophon-common</artifactId>
+    <artifactId>hhbigdata-common</artifactId>
 
     <properties>
         <hadoop.version>3.3.5</hadoop.version>

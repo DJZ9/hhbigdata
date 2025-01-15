@@ -8,7 +8,7 @@
         <version>${revision}</version>
     </parent>
 
-    <artifactId>datasophon-service</artifactId>
+    <artifactId>hhbigdata-service</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
@@ -30,12 +30,12 @@
         </dependency>
         <dependency>
             <groupId>com.datasophon</groupId>
-            <artifactId>datasophon-infrastructure</artifactId>
+            <artifactId>hhbigdata-infrastructure</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>com.datasophon</groupId>
-            <artifactId>datasophon-common</artifactId>
+            <artifactId>hhbigdata-common</artifactId>
             <version>${project.version}</version>
             <exclusions>
                 <exclusion>
@@ -46,7 +46,7 @@
         </dependency>
         <dependency>
             <groupId>com.datasophon</groupId>
-            <artifactId>datasophon-domain</artifactId>
+            <artifactId>hhbigdata-domain</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>

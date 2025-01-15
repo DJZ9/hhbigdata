@@ -24,7 +24,7 @@
         <version>${revision}</version>
     </parent>
 
-    <artifactId>datasophon-worker</artifactId>
+    <artifactId>hhbigdata-worker</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
@@ -96,7 +96,7 @@
         </dependency>
         <dependency>
             <groupId>com.datasophon</groupId>
-            <artifactId>datasophon-common</artifactId>
+            <artifactId>hhbigdata-common</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>

@@ -24,7 +24,7 @@
         <version>${revision}</version>
     </parent>
 
-    <artifactId>datasophon-ui</artifactId>
+    <artifactId>hhbigdata-ui</artifactId>
 
     <properties>
         <build.node.version>v20.16.0</build.node.version>

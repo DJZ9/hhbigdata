@@ -8,7 +8,7 @@
         <version>${revision}</version>
     </parent>
 
-    <artifactId>datasophon-domain</artifactId>
+    <artifactId>hhbigdata-domain</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
