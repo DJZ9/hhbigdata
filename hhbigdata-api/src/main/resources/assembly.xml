@@ -40,7 +40,7 @@
     <fileSets>
         <!--拷贝application.yml文件到jar包的外部conf目录下面-->
         <fileSet>
-            <directory>${basedir}/../datasophon-api/src/main/resources</directory>
+            <directory>${basedir}/../hhbigdata-api/src/main/resources</directory>
             <includes>
                 <include>logback-api.xml</include>
                 <include>application.conf</include>
@@ -56,7 +56,7 @@
             </includes>
         </fileSet>
         <fileSet>
-            <directory>${basedir}/../datasophon-common/src/main/resources</directory>
+            <directory>${basedir}/../hhbigdata-common/src/main/resources</directory>
             <includes>
                 <include>**/*.properties</include>
                 <include>**/*.xml</include>
@@ -65,7 +65,7 @@
             <fileMode>0755</fileMode>
         </fileSet>
         <fileSet>
-            <directory>${basedir}/../datasophon-infrastructure/src/main/resources</directory>
+            <directory>${basedir}/../hhbigdata-infrastructure/src/main/resources</directory>
             <includes>
                 <include>**/*.properties</include>
                 <include>**/*.xml</include>
@@ -74,7 +74,7 @@
             <fileMode>0755</fileMode>
         </fileSet>
         <fileSet>
-            <directory>${basedir}/../datasophon-infrastructure/src/main/resources/mapper</directory>
+            <directory>${basedir}/../hhbigdata-infrastructure/src/main/resources/mapper</directory>
             <includes>
                 <include>**/*.xml</include>
             </includes>
@@ -110,7 +110,7 @@
 
 
         <fileSet>
-            <directory>${basedir}/../datasophon-api/src/main/resources/meta</directory>
+            <directory>${basedir}/../hhbigdata-api/src/main/resources/meta</directory>
             <outputDirectory>conf/meta</outputDirectory>
         </fileSet>
         <fileSet>
@@ -120,7 +120,7 @@
             <fileMode>0755</fileMode>
         </fileSet>
         <fileSet>
-            <directory>${basedir}/../datasophon-ui/dist</directory>
+            <directory>${basedir}/../hhbigdata-ui/dist</directory>
             <outputDirectory>/conf/front/views</outputDirectory>
             <includes>
                 <include>*.html</include>
@@ -131,7 +131,7 @@
             <fileMode>0755</fileMode>
         </fileSet>
         <fileSet>
-            <directory>${basedir}/../datasophon-ui/dist</directory>
+            <directory>${basedir}/../hhbigdata-ui/dist</directory>
             <outputDirectory>/conf/front/static/resources/bundle-main</outputDirectory>
             <directoryMode>0755</directoryMode>
             <fileMode>0755</fileMode>
@@ -177,11 +177,11 @@
             <fileMode>0755</fileMode>
         </fileSet>
         <fileSet>
-            <directory>${basedir}/../datasophon-init/</directory>
+            <directory>${basedir}/../hhbigdata-init/</directory>
             <includes>
                 <include>**/*.*</include>
             </includes>
-            <outputDirectory>datasophon-init</outputDirectory>
+            <outputDirectory>hhbigdata-init</outputDirectory>
             <fileMode>0755</fileMode>
             <lineEnding>unix</lineEnding>
         </fileSet>

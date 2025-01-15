@@ -40,7 +40,7 @@
     <fileSets>
         <!--拷贝application.yml文件到jar包的外部conf目录下面-->
         <fileSet>
-            <directory>${basedir}/../datasophon-worker/src/main/resources</directory>
+            <directory>${basedir}/../hhbigdata-worker/src/main/resources</directory>
             <includes>
                 <include>**/*.yml</include>
                 <include>**/logback.xml</include>
@@ -51,7 +51,7 @@
             <fileMode>0755</fileMode>
         </fileSet>
         <fileSet>
-            <directory>${basedir}/../datasophon-worker/src/main/resources/templates</directory>
+            <directory>${basedir}/../hhbigdata-worker/src/main/resources/templates</directory>
             <includes>
                 <include>**/*.ftl</include>
                 <include>**/*.yml</include>
@@ -60,7 +60,7 @@
             <lineEnding>unix</lineEnding>
         </fileSet>
         <fileSet>
-            <directory>${basedir}/../datasophon-common/src/main/resources</directory>
+            <directory>${basedir}/../hhbigdata-common/src/main/resources</directory>
             <includes>
                 <include>**/*.properties</include>
                 <include>**/*.xml</include>
@@ -84,7 +84,7 @@
             <directory>${basedir}/src/main/resources/script</directory>
             <includes>
                 <include>profile</include>
-                <include>datasophon-worker</include>
+                <include>hhbigdata-worker</include>
                 <include>bd_ca_cert</include>
                 <include>bd_ca_key</include>
             </includes>

@@ -3,8 +3,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>com.datasophon</groupId>
-        <artifactId>datasophon</artifactId>
+        <groupId>com.hhbigdata</groupId>
+        <artifactId>hhbigdata</artifactId>
         <version>${revision}</version>
     </parent>
 
@@ -29,12 +29,12 @@
             <artifactId>commons-httpclient</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.datasophon</groupId>
+            <groupId>com.hhbigdata</groupId>
             <artifactId>hhbigdata-infrastructure</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>com.datasophon</groupId>
+            <groupId>com.hhbigdata</groupId>
             <artifactId>hhbigdata-common</artifactId>
             <version>${project.version}</version>
             <exclusions>
@@ -45,7 +45,7 @@
             </exclusions>
         </dependency>
         <dependency>
-            <groupId>com.datasophon</groupId>
+            <groupId>com.hhbigdata</groupId>
             <artifactId>hhbigdata-domain</artifactId>
             <version>${project.version}</version>
         </dependency>
