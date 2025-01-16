@@ -1,10 +1,10 @@
-package com.datasophon.api.service.impl;
+package com.hhbigdata.api.service.impl;
 
-import com.datasophon.api.service.ClusterHostService;
-import com.datasophon.api.service.ClusterUserGroupService;
-import com.datasophon.common.utils.Result;
-import com.datasophon.dao.entity.ClusterHostEntity;
-import com.datasophon.dao.enums.MANAGED;
+import com.hhbigdata.api.service.ClusterHostService;
+import com.hhbigdata.api.service.ClusterUserGroupService;
+import com.hhbigdata.common.utils.Result;
+import com.hhbigdata.dao.entity.ClusterHostEntity;
+import com.hhbigdata.dao.enums.MANAGED;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;

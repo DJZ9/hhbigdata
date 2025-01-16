@@ -1,13 +1,13 @@
-package com.datasophon.api.service.impl;
+package com.hhbigdata.api.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.datasophon.api.service.*;
-import com.datasophon.common.model.HostServiceRoleMapping;
-import com.datasophon.common.model.ServiceConfig;
-import com.datasophon.common.model.ServiceRoleHostMapping;
-import com.datasophon.common.utils.Result;
-import com.datasophon.dao.entity.*;
-import com.datasophon.dao.enums.*;
+import com.hhbigdata.api.service.*;
+import com.hhbigdata.common.model.HostServiceRoleMapping;
+import com.hhbigdata.common.model.ServiceConfig;
+import com.hhbigdata.common.model.ServiceRoleHostMapping;
+import com.hhbigdata.common.utils.Result;
+import com.hhbigdata.dao.entity.*;
+import com.hhbigdata.dao.enums.*;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

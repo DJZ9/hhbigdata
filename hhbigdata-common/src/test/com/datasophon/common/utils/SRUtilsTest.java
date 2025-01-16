@@ -1,6 +1,6 @@
-package com.datasophon.common.utils;
+package com.hhbigdata.common.utils;
 
-import com.datasophon.common.model.ProcInfo;
+import com.hhbigdata.common.model.ProcInfo;
 import org.junit.jupiter.api.Test;
 
 import java.sql.SQLException;

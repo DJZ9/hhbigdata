@@ -18,10 +18,10 @@
 
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.datasophon.dao.mapper.ClusterHostMapper">
+<mapper namespace="com.hhbigdata.dao.mapper.ClusterHostMapper">
 
 <!--    getClusterHostByHostname-->
-    <select id="getClusterHostByHostname" resultType="com.datasophon.dao.entity.ClusterHostDO">
+    <select id="getClusterHostByHostname" resultType="com.hhbigdata.dao.entity.ClusterHostDO">
         select *
         from t_ddh_cluster_host
         where hostname = #{hostname}

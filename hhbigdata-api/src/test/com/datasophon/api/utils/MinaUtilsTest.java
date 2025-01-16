@@ -1,4 +1,4 @@
-package com.datasophon.api.utils;
+package com.hhbigdata.api.utils;
 
 import org.apache.sshd.client.session.ClientSession;
 import org.junit.jupiter.api.Assertions;

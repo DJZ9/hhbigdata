@@ -157,12 +157,12 @@ This file is based on the checkstyle file of Apache Beam.
             &lt;!&ndash; Checks for out of order import statements. &ndash;&gt;
             <property name="severity" value="error"/>
             <property name="groups"
-                      value="akk,com.datasophon,org.apache,com,org,cn,lombok,scala,javax,java"/>
+                      value="akk,com.hhbigdata,org.apache,com,org,cn,lombok,scala,javax,java"/>
             <property name="separated" value="true"/>
             <property name="sortStaticImportsAlphabetically" value="false"/>
             <property name="option" value="bottom"/>
             <property name="tokens" value="STATIC_IMPORT, IMPORT"/>
-            <property name="staticGroups" value="com.datasophon" />
+            <property name="staticGroups" value="com.hhbigdata" />
             <property name="useContainerOrderingForStatic" value="true" />
             <message key="import.ordering"
                      value="Import {0} appears after other imports that it should precede"/>

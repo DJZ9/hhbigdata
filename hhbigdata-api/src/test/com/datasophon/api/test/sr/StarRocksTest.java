@@ -1,4 +1,4 @@
-package com.datasophon.api.test.sr;
+package com.hhbigdata.api.test.sr;
 
 
 import org.junit.jupiter.api.Test;

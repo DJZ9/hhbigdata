@@ -29,8 +29,8 @@
         </encoder>
     </appender>
     <appender name="TASKLOGFILE" class="ch.qos.logback.classic.sift.SiftingAppender">
-        <filter class="com.datasophon.worker.log.TaskLogFilter"/>
-        <Discriminator class="com.datasophon.worker.log.TaskLogDiscriminator">
+        <filter class="com.hhbigdata.worker.log.TaskLogFilter"/>
+        <Discriminator class="com.hhbigdata.worker.log.TaskLogDiscriminator">
             <key>taskAppId</key>
             <logBase>${log.base}</logBase>
         </Discriminator>

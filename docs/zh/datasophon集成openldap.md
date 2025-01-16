@@ -222,17 +222,17 @@ service_ddl.json
 
 ### 3、新增worker策略
 
-新增 com.datasophon.worker.strategy.OpenldapHandlerStrategy
+新增 com.hhbigdata.worker.strategy.OpenldapHandlerStrategy
 
 ```shell
-package com.datasophon.worker.strategy;
+package com.hhbigdata.worker.strategy;
 
-import com.datasophon.common.Constants;
-import com.datasophon.common.command.ServiceRoleOperateCommand;
-import com.datasophon.common.enums.CommandType;
-import com.datasophon.common.utils.ExecResult;
-import com.datasophon.common.utils.ShellUtils;
-import com.datasophon.worker.handler.ServiceHandler;
+import com.hhbigdata.common.Constants;
+import com.hhbigdata.common.command.ServiceRoleOperateCommand;
+import com.hhbigdata.common.enums.CommandType;
+import com.hhbigdata.common.utils.ExecResult;
+import com.hhbigdata.common.utils.ShellUtils;
+import com.hhbigdata.worker.handler.ServiceHandler;
 
 import java.sql.SQLException;
 
@@ -305,62 +305,62 @@ public class OpenldapHandlerStrategy extends AbstractHandlerStrategy implements 
 
 ```
 
-com.datasophon.worker.strategy.ServiceRoleStrategyContext 新增代码
+com.hhbigdata.worker.strategy.ServiceRoleStrategyContext 新增代码
 
 ```shell
 map.put("OpenldapServer", new OpenldapHandlerStrategy("OPENLDAP", "OpenldapServer"));
 ```
 
-新增com.datasophon.api.strategy.OpenldapHandlerStrategy
+新增com.hhbigdata.api.strategy.OpenldapHandlerStrategy
 
 ```java
-package com.datasophon.api.strategy;
+package com.hhbigdata.api.strategy;
 
 import cn.hutool.core.util.ObjUtil;
-import com.datasophon.api.load.GlobalVariables;
-import com.datasophon.api.utils.ProcessUtils;
-import com.datasophon.common.model.ServiceConfig;
-import com.datasophon.common.model.ServiceRoleInfo;
-import com.datasophon.dao.entity.ClusterServiceRoleInstanceEntity;
+import com.hhbigdata.api.load.GlobalVariables;
+import com.hhbigdata.api.utils.ProcessUtils;
+import com.hhbigdata.common.model.ServiceConfig;
+import com.hhbigdata.common.model.ServiceRoleInfo;
+import com.hhbigdata.dao.entity.ClusterServiceRoleInstanceEntity;
 
 import java.util.List;
 import java.util.Map;
 
 public class OpenldapHandlerStrategy implements ServiceRoleStrategy {
-    @Override
-    public void handler(Integer clusterId, List<String> hosts) {
-        Map<String, String> globalVariables = GlobalVariables.get(clusterId);
-        if (!globalVariables.containsKey("${openldapAddr}") || ObjUtil.isNull(globalVariables.get("${openldapAddr}"))) {
-            if (!hosts.isEmpty()) {
-                ProcessUtils.generateClusterVariable(globalVariables, clusterId, "${openldapAddr}", "ldap://" + hosts.get(0) + ":389");
-            }
-        }
-    }
+	@Override
+	public void handler(Integer clusterId, List<String> hosts) {
+		Map<String, String> globalVariables = GlobalVariables.get(clusterId);
+		if (!globalVariables.containsKey("${openldapAddr}") || ObjUtil.isNull(globalVariables.get("${openldapAddr}"))) {
+			if (!hosts.isEmpty()) {
+				ProcessUtils.generateClusterVariable(globalVariables, clusterId, "${openldapAddr}", "ldap://" + hosts.get(0) + ":389");
+			}
+		}
+	}
 
-    @Override
-    public void handlerConfig(Integer clusterId, List<ServiceConfig> list) {
+	@Override
+	public void handlerConfig(Integer clusterId, List<ServiceConfig> list) {
 
-    }
+	}
 
-    @Override
-    public void getConfig(Integer clusterId, List<ServiceConfig> list) {
+	@Override
+	public void getConfig(Integer clusterId, List<ServiceConfig> list) {
 
-    }
+	}
 
-    @Override
-    public void handlerServiceRoleInfo(ServiceRoleInfo serviceRoleInfo, String hostname) {
+	@Override
+	public void handlerServiceRoleInfo(ServiceRoleInfo serviceRoleInfo, String hostname) {
 
-    }
+	}
 
-    @Override
-    public void handlerServiceRoleCheck(ClusterServiceRoleInstanceEntity roleInstanceEntity, Map<String, ClusterServiceRoleInstanceEntity> map) {
+	@Override
+	public void handlerServiceRoleCheck(ClusterServiceRoleInstanceEntity roleInstanceEntity, Map<String, ClusterServiceRoleInstanceEntity> map) {
 
-    }
+	}
 }
 
 ```
 
-修改com.datasophon.api.strategy.ServiceRoleStrategyContext
+修改com.hhbigdata.api.strategy.ServiceRoleStrategyContext
 
 ```java
 map.put("OpenldapServer", new OpenldapHandlerStrategy());

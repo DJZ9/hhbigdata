@@ -498,19 +498,19 @@ ${item.name} ${item.value}
 
 ### 3、修改源码
 
-com.datasophon.api.strategy.RedisHandlerStrategy
+com.hhbigdata.api.strategy.RedisHandlerStrategy
 
 ```java
-package com.datasophon.api.strategy;
+package com.hhbigdata.api.strategy;
 
-import com.datasophon.api.load.GlobalVariables;
-import com.datasophon.api.utils.ProcessUtils;
-import com.datasophon.common.Constants;
-import com.datasophon.common.cache.CacheUtils;
-import com.datasophon.common.model.ServiceConfig;
-import com.datasophon.common.model.ServiceRoleInfo;
-import com.datasophon.dao.entity.ClusterInfoEntity;
-import com.datasophon.dao.entity.ClusterServiceRoleInstanceEntity;
+import com.hhbigdata.api.load.GlobalVariables;
+import com.hhbigdata.api.utils.ProcessUtils;
+import com.hhbigdata.common.Constants;
+import com.hhbigdata.common.cache.CacheUtils;
+import com.hhbigdata.common.model.ServiceConfig;
+import com.hhbigdata.common.model.ServiceRoleInfo;
+import com.hhbigdata.dao.entity.ClusterInfoEntity;
+import com.hhbigdata.dao.entity.ClusterServiceRoleInstanceEntity;
 
 import java.util.HashMap;
 import java.util.List;
@@ -519,106 +519,106 @@ import java.util.stream.Collectors;
 
 public class RedisHandlerStrategy extends ServiceHandlerAbstract implements ServiceRoleStrategy {
 
-    @Override
-    public void handler(Integer clusterId, List<String> hosts) {
+	@Override
+	public void handler(Integer clusterId, List<String> hosts) {
 
-    }
+	}
 
-    @Override
-    public void handlerConfig(Integer clusterId, List<ServiceConfig> list) {
+	@Override
+	public void handlerConfig(Integer clusterId, List<ServiceConfig> list) {
 
-    }
+	}
 
-    @Override
-    public void getConfig(Integer clusterId, List<ServiceConfig> list) {
-        Map<String, String> globalVariables = GlobalVariables.get(clusterId);
-        String masterPort = globalVariables.get("${redisMasterPort}");
-        String slavePort = globalVariables.get("${redisSlavePort}");
+	@Override
+	public void getConfig(Integer clusterId, List<ServiceConfig> list) {
+		Map<String, String> globalVariables = GlobalVariables.get(clusterId);
+		String masterPort = globalVariables.get("${redisMasterPort}");
+		String slavePort = globalVariables.get("${redisSlavePort}");
 
-        ClusterInfoEntity clusterInfo = ProcessUtils.getClusterInfo(clusterId);
-        String hostMapKey =
-                clusterInfo.getClusterCode()
-                        + Constants.UNDERLINE
-                        + Constants.SERVICE_ROLE_HOST_MAPPING;
-        HashMap<String, List<String>> map = (HashMap<String, List<String>>) CacheUtils.get(hostMapKey);
-        List<String> masterHostList = map.get("RedisMaster");
-        List<String> workerHostList = map.get("RedisWorker");
+		ClusterInfoEntity clusterInfo = ProcessUtils.getClusterInfo(clusterId);
+		String hostMapKey =
+				clusterInfo.getClusterCode()
+						+ Constants.UNDERLINE
+						+ Constants.SERVICE_ROLE_HOST_MAPPING;
+		HashMap<String, List<String>> map = (HashMap<String, List<String>>) CacheUtils.get(hostMapKey);
+		List<String> masterHostList = map.get("RedisMaster");
+		List<String> workerHostList = map.get("RedisWorker");
 
-        for (ServiceConfig serviceConfig : list) {
-            if ("RedisMasterAddr".equals(serviceConfig.getName())) {
-                String masterAddr = masterHostList.stream()
-                        .map(t -> t + ":" + masterPort)
-                        .collect(Collectors.joining(" "));
-                serviceConfig.setRequired(true);
-                serviceConfig.setValue(masterAddr);
-            } else if ("RedisSlaveAddr".equals(serviceConfig.getName())) {
-                String workerAddr = workerHostList.stream()
-                        .map(t -> t + ":" + slavePort)
-                        .collect(Collectors.joining(" "));
-                serviceConfig.setRequired(true);
-                serviceConfig.setValue(workerAddr);
-            }
-        }
-    }
+		for (ServiceConfig serviceConfig : list) {
+			if ("RedisMasterAddr".equals(serviceConfig.getName())) {
+				String masterAddr = masterHostList.stream()
+						.map(t -> t + ":" + masterPort)
+						.collect(Collectors.joining(" "));
+				serviceConfig.setRequired(true);
+				serviceConfig.setValue(masterAddr);
+			} else if ("RedisSlaveAddr".equals(serviceConfig.getName())) {
+				String workerAddr = workerHostList.stream()
+						.map(t -> t + ":" + slavePort)
+						.collect(Collectors.joining(" "));
+				serviceConfig.setRequired(true);
+				serviceConfig.setValue(workerAddr);
+			}
+		}
+	}
 
-    @Override
-    public void handlerServiceRoleInfo(ServiceRoleInfo serviceRoleInfo, String hostname) {
+	@Override
+	public void handlerServiceRoleInfo(ServiceRoleInfo serviceRoleInfo, String hostname) {
 
-    }
+	}
 
-    @Override
-    public void handlerServiceRoleCheck(ClusterServiceRoleInstanceEntity roleInstanceEntity, Map<String, ClusterServiceRoleInstanceEntity> map) {
+	@Override
+	public void handlerServiceRoleCheck(ClusterServiceRoleInstanceEntity roleInstanceEntity, Map<String, ClusterServiceRoleInstanceEntity> map) {
 
-    }
+	}
 }
 ```
 
-com.datasophon.api.strategy.ServiceRoleStrategyContext
+com.hhbigdata.api.strategy.ServiceRoleStrategyContext
 
 ```java
 map.put("REDIS", new RedisHandlerStrategy());
 ```
 
-com.datasophon.worker.strategy.RedisHandlerStrategy
+com.hhbigdata.worker.strategy.RedisHandlerStrategy
 
 ```java
-package com.datasophon.worker.strategy;
+package com.hhbigdata.worker.strategy;
 
-import com.datasophon.common.Constants;
-import com.datasophon.common.command.ServiceRoleOperateCommand;
-import com.datasophon.common.enums.CommandType;
-import com.datasophon.common.utils.ExecResult;
-import com.datasophon.common.utils.ShellUtils;
-import com.datasophon.worker.handler.ServiceHandler;
+import com.hhbigdata.common.Constants;
+import com.hhbigdata.common.command.ServiceRoleOperateCommand;
+import com.hhbigdata.common.enums.CommandType;
+import com.hhbigdata.common.utils.ExecResult;
+import com.hhbigdata.common.utils.ShellUtils;
+import com.hhbigdata.worker.handler.ServiceHandler;
 
 import java.sql.SQLException;
 
 public class RedisHandlerStrategy extends AbstractHandlerStrategy implements ServiceRoleStrategy {
 
-    public RedisHandlerStrategy(String serviceName, String serviceRoleName) {
-        super(serviceName, serviceRoleName);
-    }
+	public RedisHandlerStrategy(String serviceName, String serviceRoleName) {
+		super(serviceName, serviceRoleName);
+	}
 
-    @Override
-    public ExecResult handler(ServiceRoleOperateCommand command) throws SQLException, ClassNotFoundException {
-        ServiceHandler serviceHandler = new ServiceHandler(command.getServiceName(), command.getServiceRoleName());
-        String workPath = Constants.INSTALL_PATH + Constants.SLASH + command.getDecompressPackageName();
-        ExecResult startResult;
+	@Override
+	public ExecResult handler(ServiceRoleOperateCommand command) throws SQLException, ClassNotFoundException {
+		ServiceHandler serviceHandler = new ServiceHandler(command.getServiceName(), command.getServiceRoleName());
+		String workPath = Constants.INSTALL_PATH + Constants.SLASH + command.getDecompressPackageName();
+		ExecResult startResult;
 
-        if (command.getCommandType().equals(CommandType.INSTALL_SERVICE)) {
-            startResult = serviceHandler.start(command.getStartRunner(), command.getStatusRunner(),
-                    command.getDecompressPackageName(), command.getRunAs());
-            ShellUtils.exceShell("bash " + workPath + "/redis-cluster.sh");
-        }
+		if (command.getCommandType().equals(CommandType.INSTALL_SERVICE)) {
+			startResult = serviceHandler.start(command.getStartRunner(), command.getStatusRunner(),
+					command.getDecompressPackageName(), command.getRunAs());
+			ShellUtils.exceShell("bash " + workPath + "/redis-cluster.sh");
+		}
 
-        startResult = serviceHandler.start(command.getStartRunner(), command.getStatusRunner(),
-                command.getDecompressPackageName(), command.getRunAs());
-        return startResult;
-    }
+		startResult = serviceHandler.start(command.getStartRunner(), command.getStatusRunner(),
+				command.getDecompressPackageName(), command.getRunAs());
+		return startResult;
+	}
 }
 ```
 
-com.datasophon.worker.strategy.ServiceRoleStrategyContext
+com.hhbigdata.worker.strategy.ServiceRoleStrategyContext
 
 ```java
 map.put("RedisMaster", new RedisHandlerStrategy("REDIS", "RedisMaster"));

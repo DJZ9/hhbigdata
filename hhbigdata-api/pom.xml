@@ -106,7 +106,7 @@
                     </descriptors>
                     <archive>
                         <manifest>
-                            <mainClass>com.datasophon.api.DataSophonApplicationServer</mainClass>
+                            <mainClass>com.hhbigdata.api.DataSophonApplicationServer</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

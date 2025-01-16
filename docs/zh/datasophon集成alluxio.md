@@ -419,7 +419,7 @@ ${item.value}
 
 ### 3、新增worker源码Handler
 
-修改 com.datasophon.worker.handler.ConfigureServiceHandler
+修改 com.hhbigdata.worker.handler.ConfigureServiceHandler
 新增：
 
 ```shell
@@ -440,23 +440,23 @@ if ("AlluxioWorker".equals(serviceRoleName) && "alluxio-site.properties".equals(
 
 ![image](https://github.com/datavane/datasophon/assets/62798940/475ae77d-8865-457c-9699-dd4bff5e46f2)
 
-修改 com.datasophon.worker.strategy.ServiceRoleStrategyContext：
+修改 com.hhbigdata.worker.strategy.ServiceRoleStrategyContext：
 
 ```shell
 map.put("AlluxioMaster", new AlluxioHandlerStrategy("ALLUXIO", "AlluxioMaster"));
 ```
 
-创建：com.datasophon.worker.strategy.AlluxioHandlerStrategy
+创建：com.hhbigdata.worker.strategy.AlluxioHandlerStrategy
 
 ```shell
-package com.datasophon.worker.strategy;
+package com.hhbigdata.worker.strategy;
 
-import com.datasophon.common.Constants;
-import com.datasophon.common.command.ServiceRoleOperateCommand;
-import com.datasophon.common.enums.CommandType;
-import com.datasophon.common.utils.ExecResult;
-import com.datasophon.common.utils.ShellUtils;
-import com.datasophon.worker.handler.ServiceHandler;
+import com.hhbigdata.common.Constants;
+import com.hhbigdata.common.command.ServiceRoleOperateCommand;
+import com.hhbigdata.common.enums.CommandType;
+import com.hhbigdata.common.utils.ExecResult;
+import com.hhbigdata.common.utils.ShellUtils;
+import com.hhbigdata.worker.handler.ServiceHandler;
 
 import java.sql.SQLException;
 import java.util.ArrayList;

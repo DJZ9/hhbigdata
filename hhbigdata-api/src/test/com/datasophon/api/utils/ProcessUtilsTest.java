@@ -1,16 +1,16 @@
-package com.datasophon.api.utils;
+package com.hhbigdata.api.utils;
 
 import akka.actor.ActorRef;
-import com.datasophon.api.service.ClusterHostService;
-import com.datasophon.api.service.ClusterServiceRoleInstanceService;
-import com.datasophon.common.command.ExecuteServiceRoleCommand;
-import com.datasophon.common.enums.CommandType;
-import com.datasophon.common.enums.ServiceExecuteState;
-import com.datasophon.common.enums.ServiceRoleType;
-import com.datasophon.common.model.*;
-import com.datasophon.common.utils.ExecResult;
-import com.datasophon.dao.entity.*;
-import com.datasophon.dao.enums.*;
+import com.hhbigdata.api.service.ClusterHostService;
+import com.hhbigdata.api.service.ClusterServiceRoleInstanceService;
+import com.hhbigdata.common.command.ExecuteServiceRoleCommand;
+import com.hhbigdata.common.enums.CommandType;
+import com.hhbigdata.common.enums.ServiceExecuteState;
+import com.hhbigdata.common.enums.ServiceRoleType;
+import com.hhbigdata.common.model.*;
+import com.hhbigdata.common.utils.ExecResult;
+import com.hhbigdata.dao.entity.*;
+import com.hhbigdata.dao.enums.*;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
