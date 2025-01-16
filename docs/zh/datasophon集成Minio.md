@@ -243,7 +243,7 @@ sh /opt/datasophon/datasophon-worker/bin/datasophon-worker.sh restart worker
 主节点重启api
 
 ```shell
-sh /opt/apps/datasophon/datasophon-manager-1.1.2/bin/datasophon-api.sh restart api
+sh /opt/apps/datasophon/datasophon-manager-1.1.2/bin/hhbigdata-api.sh restart api
 ```
 
 此时可以看到mysql元数据库中 t_ddh_frame_service 和 t_ddh_frame_service_role 两个表已经添加了minio的元数据。

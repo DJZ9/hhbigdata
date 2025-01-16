@@ -145,7 +145,7 @@ sh /opt/datasophon/datasophon-worker/bin/datasophon-worker.sh restart worker
 主节点重启api
 
 ```shell
-sh /opt/apps/datasophon-manager-1.2.0/bin/datasophon-api.sh restart api
+sh /opt/apps/datasophon-manager-1.2.0/bin/hhbigdata-api.sh restart api
 ```
 
 ### 5、测试

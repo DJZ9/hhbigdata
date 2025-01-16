@@ -56,7 +56,7 @@ service_ddl.json：
 ### 3、重启api
 
 ```shell
-sh /opt/apps/datasophon-manager-1.2.0/bin/datasophon-api.sh restart api
+sh /opt/apps/datasophon-manager-1.2.0/bin/hhbigdata-api.sh restart api
 ```
 
 ### 4、安装测试

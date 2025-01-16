@@ -60,7 +60,7 @@ sh bin/datasophon-worker.sh restart worker
 ### 主节点重启api
 
 ```shell
-sh /opt/datasophon/datasophon-manager-1.2.1/bin/datasophon-api.sh restart api
+sh /opt/datasophon/datasophon-manager-1.2.1/bin/hhbigdata-api.sh restart api
 ```
 
 ### 在datasophon中安装的hive3.1.3服务和spark3.3.4服务
