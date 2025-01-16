@@ -65,7 +65,7 @@ const assetsCDN = {
 
 module.exports = {
   // 172.31.96.16:5001
-  baseUrl:'/',
+  publicPath:'./',
   devServer: {
     port: 8080, 
     proxy: {
