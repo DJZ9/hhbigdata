@@ -65,9 +65,8 @@ const assetsCDN = {
 
 module.exports = {
   // 172.31.96.16:5001
-  publicPath:'/',
   devServer: {
-    port: 8080, 
+    port: 8080,
     proxy: {
       '/ddh': {
         //此处要与 /services/api.js 中的 API_PROXY_PREFIX 值保持一致
