@@ -688,9 +688,9 @@ public void handler(Integer clusterId, List<String> hosts) {
 }
 ```
 
-### 5、重启DataSophonApplicationServer服务
+### 5、重启HhBigDataApplicationServer服务
 
-关闭原来的DataSophonApplicationServer服务
+关闭原来的HhBigDataApplicationServer服务
 
 ```
 datasophon-manager-1.2.0/bin/datasophon-api.sh stop api
@@ -708,7 +708,7 @@ rm  -rf  datasophon-manager-1.2.0/
 tar -zxvf  datasophon-manager-1.2.0.tar.gz 
 ```
 
-重新启动DataSophonApplicationServer服务
+重新启动HhBigDataApplicationServer服务
 
 ```
 datasophon-manager-1.2.0/bin/datasophon-api.sh start api
@@ -716,4 +716,4 @@ datasophon-manager-1.2.0/bin/datasophon-api.sh start api
 
 ### 6、 部署hbase服务
 
-启动后DataSophonApplicationServer，在ui界面点击添加服务，选择hbase安装部署即可
+启动后HhBigDataApplicationServer，在ui界面点击添加服务，选择hbase安装部署即可
