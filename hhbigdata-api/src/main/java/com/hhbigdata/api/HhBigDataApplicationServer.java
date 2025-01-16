@@ -41,10 +41,10 @@ import cn.hutool.extra.spring.EnableSpringUtil;
 @ComponentScan("com.hhbigdata")
 @MapperScan("com.hhbigdata.dao")
 @EnableSpringUtil
-public class DataSophonApplicationServer extends SpringBootServletInitializer {
+public class HhBigDataApplicationServer extends SpringBootServletInitializer {
     
     public static void main(String[] args) {
-        SpringApplication.run(DataSophonApplicationServer.class, args);
+        SpringApplication.run(HhBigDataApplicationServer.class, args);
         // add shutdown hook， close and shutdown resources
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
             shutdown();
