@@ -431,9 +431,6 @@
         </plugins>
     </build>
 
-    <url>https://datasophon.github.io/datasophon-website/</url>
-    <inceptionYear>2022</inceptionYear>
-
     <licenses>
         <license>
             <name>The Apache Software License, Version 2.0</name>
@@ -441,11 +438,7 @@
             <distribution>repo</distribution>
         </license>
     </licenses>
-
-    <scm>
-        <connection>git@github.com:datasophon/datasophon.git</connection>
-        <url>https://github.com/datasophon/datasophon</url>
-    </scm>
+    
     <profiles>
         <profile>
             <id>google-mirror</id>
